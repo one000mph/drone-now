@@ -45,7 +45,7 @@ if [ -n "$PLUGIN_LOCAL_CONFIG" ]; then
         echo "$ALIAS_SUCCESS_MESSAGE"
     fi
 
-    if grep -q "scale" $PLUGIN_LOCAL_CONFIG; then 
+    if grep -q "scale" $PLUGIN_LOCAL_CONFIG; then
         echo "> Scaling…" &&
         SCALE_SUCCESS_MESSAGE=$(now scale $NOW_AUTH -A ./$PLUGIN_LOCAL_CONFIG $NOW_DEPLOYMENT_URL) &&
         echo "$SCALE_SUCCESS_MESSAGE";
@@ -103,8 +103,8 @@ if [ -n "$PLUGIN_RULES_DOMAIN" ] && [ -n "$PLUGIN_RULES_FILE" ]; then
 fi
 
 ## Check exit code
-rc=$?; 
-if [[ $rc != 0 ]]; then 
+rc=$?;
+if [[ $rc != 0 ]]; then
     echo "> non-zero exit code $rc" &&
     exit $rc
 else
