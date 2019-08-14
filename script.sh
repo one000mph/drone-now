@@ -17,7 +17,7 @@ fi
 
 if [ -n "$PLUGIN_TEAM" ]; then
     echo "> adding custom team scope $PLUGIN_TEAM"
-    NOW_TEAM_OPTION="--team $PLUGIN_TEAM"
+    NOW_TEAM_OPTION="--scope $PLUGIN_TEAM"
 else
     echo "> No custom team scope provided."
 fi
