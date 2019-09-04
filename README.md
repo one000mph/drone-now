@@ -2,12 +2,6 @@
 
 ![Now logo](now.png?raw=true "now.sh")
 
-> Deploying to [▲ZEIT now](https://zeit.co/now) with [Drone](https://drone.io) CI.
-
-[![Docker Pulls](https://img.shields.io/docker/pulls/lucap/drone-now.svg)](https://hub.docker.com/r/lucap/drone-now/)
-[![Image](https://images.microbadger.com/badges/image/lucap/drone-now.svg)](https://microbadger.com/images/lucap/drone-now "Get your own image badge on microbadger.com")
-[![GitHub release](https://img.shields.io/github/release/lucaperret/drone-now.svg)](https://github.com/lucaperret/drone-now/releases/latest)
-
 Use case examples:
 
 - Automatically create staging deployments for pull requests
@@ -30,7 +24,7 @@ docker run --rm \
   -e PLUGIN_ALIAS=my-deployment-alias.now.sh \
   -v $(pwd):$(pwd) \
   -w $(pwd) \
-  lucap/drone-now
+  one000mph/drone-now
 ```
 
 ### From Drone CI
@@ -38,10 +32,10 @@ docker run --rm \
 ```yaml
 pipeline:
   now:
-    image: lucap/drone-now
+    image: one000mph/drone-now
     deploy_name: my-deployment-name
     type: static
-    team: xxxxxxxx
+    scope: xxxxxxxx
     directory: public
     alias: my.deployment.com
     secrets: [ now_token ]
