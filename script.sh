@@ -54,8 +54,14 @@ else
 
     if [ -n "$PLUGIN_PROD" ]; then
         echo "> Production deploy…" &&
-        PROD_SUCCESS_MESSAGE=$(now deploy --prod $NOW_AUTH $NOW_DEPLOY_OPTIONS $PLUGIN_DIRECTOR) &&
+        PROD_SUCCESS_MESSAGE=$(now deploy --prod $NOW_AUTH $NOW_DEPLOY_OPTIONS $PLUGIN_DIRECTORY) &&
         echo "$PROD_SUCCESS_MESSAGE"
+        ## Check exit code
+        rc=$?;
+        if [[ $rc != 0 ]]; then
+            echo "> non-zero exit code $rc" &&
+            exit $rc
+        fi
     fi
 fi
 
